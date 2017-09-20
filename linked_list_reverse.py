@@ -46,8 +46,11 @@ class LinkedList:
             yield current.data
             current = current.next
 
-    def reverse(self) -> None:
-        raise NotImplementedError
+    def reverse(self, head):
+        new_head = None
+        while head:
+            head.next, head, new_head = new_head, head.next, head
+        return new_head
 
 
 class LinkedListTestCase(unittest.TestCase):
